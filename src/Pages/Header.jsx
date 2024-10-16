@@ -88,7 +88,7 @@ function Header() {
         <div className="md:w-1/3 md:flex justify-center">
           <img src="logo.png" alt="logo" className="h-10 md:h-[3rem]" />
         </div>
-        <div className="md:w-2/3 flex justify-center items-center md:pr-28 gap-5">
+        <div className="md:w-2/3 flex justify-center items-center gap-5">
           <ul className="flex gap-10 items-center text-sm">
             {navItems.map((item) => (
               <li className="text-sm relative hidden md:flex" key={item.name}>
