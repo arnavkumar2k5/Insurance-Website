@@ -7,7 +7,7 @@
 
  #### 2. Navigate to the project directory:
 ```bash
-    cd LifeInsurance
+    cd Insurance-Website
 ``` 
 #### 3. Install the dependencies:
 ```bash
