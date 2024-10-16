@@ -44,7 +44,7 @@ function Component6() {
       {items.map((item, index) => (
           <div className="flex flex-col gap-5" key={index}>
             <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleOpen(index)}>
-              <p className="text-sm font-semibold md:ml-5 mt-10">
+              <p className="text-sm font-semibold md:ml-5 mt-10 pr-20">
                 {item.heading}
               </p>
               <p className="mt-8">{openIndex === index ? <span className="font-bold text-3xl">&#xfe40;</span> : <span className="font-bold text-3xl">&#xfe3f;</span> }</p>

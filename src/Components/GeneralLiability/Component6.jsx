@@ -55,10 +55,10 @@ function Component6() {
               </>
             ),
           },
-        ].map((faq, index) => (
+        ].map((item, index) => (
           <div key={index} className="flex flex-col gap-5">
             <div className="flex justify-between items-center">
-              <p className="text-sm font-bold md:ml-5 mt-10">{faq.question}</p>
+              <p className="text-sm font-bold md:ml-5 mt-10 pr-20">{item.question}</p>
               <p className="mt-8 cursor-pointer" onClick={() => toggleFAQ(index)}>
                 {openIndex === index ? (
                   <span className="font-bold text-3xl">&#xfe40;</span>
@@ -70,7 +70,7 @@ function Component6() {
             {openIndex === index && (
               <div className="bg-[#F5F5F5] text-sm p-5 rounded-2xl">
                 <ul className="list-disc flex flex-col gap-3">
-                  {faq.answer}
+                  {item.answer}
                 </ul>
               </div>
             )}
