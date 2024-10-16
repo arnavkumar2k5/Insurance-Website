@@ -2,9 +2,9 @@ import React from "react";
 
 function Component7() {
   return (
-    <div className="flex flex-col md:flex-row justify-center items-center p-5 md:p-20 md:pl-40 md:pr-40 gap-10 md:gap-5 text-sm">
+    <div className="bg-white flex flex-col md:flex-row justify-center p-5 md:p-20 md:pl-40 md:pr-40 gap-10 md:gap-5 text-sm">
       <div className="flex flex-col gap-10">
-        <div className="text-lg md:text-3xl font-bold md:pr-10">Other business insurance coverage options to consider:</div>
+        <div className="text-lg md:text-3xl font-semibold md:pr-10">Other business insurance coverage options to consider:</div>
         <ul className="list-disc pl-5 flex flex-col font-medium gap-3">
           <li>Errors and Omissions Insurance</li>
           <li>Product Liability Insurance</li>
@@ -19,7 +19,7 @@ function Component7() {
           <li>Business Liability Insurance</li>
         </ul>
       </div>
-      <div className="w-[60%] flex flex-col gap-5">
+      <div className="md:w-[60%] flex flex-col gap-5">
         <div className="text-lg md:text-3xl font-semibold">4 Ways to Avoid a Commercial <div>General Liability Insurance Claim</div></div>
         <p className="font-medium text-lg">Preventative measures in your business can help you avoid time and money spent on claims details and lawyer visits. Below we cover ways to avoid having a claim submitted against you.</p>
         <ul className="list-disc pl-5 flex flex-col gap-3">

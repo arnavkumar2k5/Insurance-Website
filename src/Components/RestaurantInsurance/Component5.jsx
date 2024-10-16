@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Component5() {
+
+  const [openIndex, setOpenIndex] = useState(null); 
+
+  const toggleOpen = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   const items = [
     {
       heading: "How much does restaurant insurance in Canada cost?",
@@ -55,27 +62,27 @@ function Component5() {
         </p>
       </div>
       <div>
-        {items.map((item) => (
-          <div className="flex flex-col gap-5">
-            <div className="flex justify-between items-center">
-            <p className="text-sm font-semibold md:ml-5 mt-10">
-              {item.heading}
-            </p>
-            <p>^</p>
+      {items.map((item, index) => (
+          <div className="flex flex-col gap-5" key={index}>
+            <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleOpen(index)}>
+              <p className="text-sm font-semibold md:ml-5 mt-10">
+                {item.heading}
+              </p>
+              <p className="mt-8">{openIndex === index ? <span className="font-bold text-3xl">&#xfe40;</span> : <span className="font-bold text-3xl">&#xfe3f;</span> }</p>
             </div>
-            <div className="bg-[#F5F5F5] text-sm p-5 rounded-2xl">
-              {item.para}
-              {(item.point1 || item.point2 || item.point3 || item.point4 || item.point5 || item.point6) && (
-                <ul className="list-disc pl-5">
-                  {item.point1 && <li>{item.point1}</li>}
-                  {item.point2 && <li>{item.point2}</li>}
-                  {item.point3 && <li>{item.point3}</li>}
-                  {item.point4 && <li>{item.point4}</li>}
-                  {item.point5 && <li>{item.point5}</li>}
-                  {item.point6 && <li>{item.point6}</li>}
-                </ul>
-              )}
-            </div>
+            {openIndex === index && (
+              <div className="bg-[#F5F5F5] text-sm p-5 rounded-2xl">
+                {item.para}
+                {(item.point1 || item.point2 || item.point3 || item.point4) && (
+                  <ul className="list-disc pl-5">
+                    {item.point1 && <li>{item.point1}</li>}
+                    {item.point2 && <li>{item.point2}</li>}
+                    {item.point3 && <li>{item.point3}</li>}
+                    {item.point4 && <li>{item.point4}</li>}
+                  </ul>
+                )}
+              </div>
+            )}
           </div>
         ))}
       </div>

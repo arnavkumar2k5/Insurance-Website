@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Component3() {
+
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleOpen = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   const items = [
     {
       heading: "Need to cancel your trip due to an unforeseen event?",
@@ -25,24 +32,34 @@ function Component3() {
             Whether you're embarking on a weekend getaway ora month-long adventure, unexpected events can happen. A protection plan can help ease your mind and help safeguard your trip, offer reimbursement for covered medical costs, and provide travelers with 24/7 access to assistance services, among other benefits.
             </div>
         </div>
-        {items.map((item) => (
-          <div className="flex flex-col gap-5">
-            <div className="flex justify-between items-center">
-            <p className="text-sm font-semibold md:ml-5 mt-10">
-              {item.heading}
-            </p>
-            <p>^</p>
+        {items.map((item, index) => (
+          <div className="flex flex-col gap-5" key={index}>
+            <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleOpen(index)}>
+              <p className="text-sm font-semibold md:ml-5 mt-10">
+                {item.heading}
+              </p>
+              <p className="mt-8">{openIndex === index ? <span className="font-bold text-3xl">&#xfe40;</span> : <span className="font-bold text-3xl">&#xfe3f;</span> }</p>
             </div>
-            <div className="bg-[#F5F5F5] text-sm p-5 rounded-2xl">
-              {item.para}
-            </div>
+            {openIndex === index && (
+              <div className="bg-[#F5F5F5] text-sm p-5 rounded-2xl">
+                {item.para}
+                {(item.point1 || item.point2 || item.point3 || item.point4) && (
+                  <ul className="list-disc pl-5">
+                    {item.point1 && <li>{item.point1}</li>}
+                    {item.point2 && <li>{item.point2}</li>}
+                    {item.point3 && <li>{item.point3}</li>}
+                    {item.point4 && <li>{item.point4}</li>}
+                  </ul>
+                )}
+              </div>
+            )}
           </div>
         ))}
         <div className="bg-cyan-400 text-white text-sm p-3 inline-block rounded-lg mt-8 ml-28 md:ml-0">
             Get a Quote
         </div>
       </div>
-      <div>
+      <div className="mt-5 md:mt-0">
         <img src="/travel/bill.png" alt="" />
       </div>
     </div>

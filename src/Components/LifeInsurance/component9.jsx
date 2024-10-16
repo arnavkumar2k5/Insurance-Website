@@ -11,10 +11,10 @@ function Component9() {
         </p>
       </div>
       <div className="flex flex-col md:flex-row gap-5 text-lg text-center font-semibold">
-        <div className="p-3 pl-10 pr-10 rounded-xl bg-white text-blue-600">
+        <div className="p-3 md:pt-5 pl-10 pr-10 rounded-xl bg-white text-blue-600">
           Join our team
         </div>
-        <div className="p-3 pl-5 pr-5 rounded-xl border-2 border-white text-white">
+        <div className="p-3 md:pt-5 pl-5 pr-5 rounded-xl border-2 border-white text-white">
           Become a partner
         </div>
       </div>

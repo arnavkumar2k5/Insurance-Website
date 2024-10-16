@@ -3,7 +3,7 @@ import React from "react";
 function Component5() {
   return (
     <div className="bg-white">
-      <div className="flex flex-col justify-center items-center py-10 mx-auto w-[90%] gap-20 mt-40">
+      <div className="flex flex-col justify-center items-center py-10 mx-auto w-[90%] gap-20 pt-40">
         <div className="text-lg self-start md:pl-[5.5rem]">
           <div className="text-2xl md:text-4xl font-bold">Travel insurance plans.</div>
           <p className="md:text-xl text-gray-600 mx-auto mt-10">
